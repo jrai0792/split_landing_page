@@ -4,7 +4,10 @@
   --left-bg-color: rgba(87, 84, 236, 0.7);
   --right-bg-color: rgba(43, 43, 43, 0.8);
   --left-btn-hover-color: rgba(28, 122, 28, 1);
-  --right-btn-hover-color: rgba(87, 84, 236, 1);
+  --right-btn-hover-color: rgb(236, 84, 84, 1);
+  --hover-width: 75%;
+  --other-width: 25%;
+  --speed: 1000ms;
 }
 
 
@@ -41,7 +44,7 @@ h1 {
   color: #fff;
   border: 0.2rem solid #fff;
   font-size: 1rem;
-  font-size: bold;
+  font-weight: bold;
   text-transform: uppercase;
   width: 15rem;
   padding: 1.5rem;
@@ -98,4 +101,38 @@ h1 {
   width: 100%;
   height: 100%;
   background-color: var(--right-bg-color);
+}
+
+.hover-left .left {
+  width: var(--hover-width);
+}
+
+.hover-left .right {
+  width: var(--other-width);
+}
+
+.hover-right .right {
+  width: var(--hover-width);
+}
+
+.hover-right .left {
+  width: var(--other-width);
+}
+
+.split.left,
+.split.right,
+.split.right::before,
+.split.left::before {
+  transition: all var(--speed) ease-in-out;
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    width: 12rem;
+    padding: 1.2rem;
+  }
 }
